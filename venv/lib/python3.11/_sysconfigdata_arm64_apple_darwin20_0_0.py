@@ -18,46 +18,43 @@ build_time_vars = {'ABIFLAGS': '',
  'BLDSHARED': 'arm64-apple-darwin20.0.0-clang -bundle -undefined '
               'dynamic_lookup '
               ''
-              '-Wl,-pie -Wl,-headerpad_max_install_names '
-              '-Wl,-dead_strip_dylibs '
+              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
               '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
               '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
               ''
               ''
-              '-Wl,-pie -Wl,-headerpad_max_install_names '
-              '-Wl,-dead_strip_dylibs '
+              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
               '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
               '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
  'BOOTSTRAP_HEADERS': '\\',
  'BUILDEXE': '.exe',
  'BUILDPYTHON': 'python.exe',
- 'BUILD_GNU_TYPE': 'arm64-apple-darwin20.0.0',
+ 'BUILD_GNU_TYPE': 'x86_64-apple-darwin13.4.0',
  'BYTESTR_DEPS': '\\',
  'CC': 'arm64-apple-darwin20.0.0-clang',
  'CCSHARED': '',
  'CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
            ''
-           '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
-           '-isystem '
+           '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem '
            '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
            ' '
            ' '
            '-arch arm64  '
            ''
-           '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
-           '-isystem '
+           '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem '
            '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
            ' '
            ' '
            '-arch arm64 ',
  'CFLAGSFORSHARED': '',
  'CFLAGS_ALIASING': '-fno-strict-aliasing',
+ 'CFLAGS_NODIST': '',
  'CONFIGFILES': 'configure configure.ac acconfig.h pyconfig.h.in '
                 'Makefile.pre.in',
  'CONFIGURE_CFLAGS': ''
                      ''
-                     '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
-                     '-O2 -pipe -isystem '
+                     '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
+                     '-pipe -isystem '
                      '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                      ' '
                      ' '
@@ -69,82 +66,79 @@ build_time_vars = {'ABIFLAGS': '',
                        ''
                        '-D_FORTIFY_SOURCE=2 -isystem '
                        '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                       '-mmacosx-version-min=11.1 '
+                       '-mmacosx-version-min=11.0 '
                        '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'CONFIGURE_LDFLAGS': ''
                       ''
-                      '-Wl,-pie -Wl,-headerpad_max_install_names '
-                      '-Wl,-dead_strip_dylibs '
+                      '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                       '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                       '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
  'CONFIGURE_LDFLAGS_NODIST': ' -Wl,-export_dynamic -g',
- 'CONFIGURE_LDFLAGS_NOLTO': '-fno-lto',
- 'CONFIG_ARGS': "'--prefix=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv' "
-                "'--build=arm64-apple-darwin20.0.0' "
+ 'CONFIGURE_LDFLAGS_NOLTO': '=thin',
+ 'CONFIG_ARGS': "'--with-build-python=/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python' "
+                "'--prefix=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv' "
+                "'--build=x86_64-apple-darwin13.4.0' "
                 "'--host=arm64-apple-darwin20.0.0' '--enable-ipv6' "
                 "'--with-ensurepip=no' "
                 "'--with-tzpath=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share/zoneinfo:/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share/tzinfo' "
                 "'--with-computed-gotos' '--with-system-ffi' "
-                "'--enable-loadable-sqlite-extensions' "
+                "'--with-system-expat' '--enable-loadable-sqlite-extensions' "
                 "'--with-tcltk-includes=-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include' "
                 "'--with-tcltk-libs=-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib "
                 "-ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' "
-                "'--enable-optimizations' "
-                "'-oldincludedir=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' "
-                "'--disable-shared' 'PROFILE_TASK=-m test --pgo' "
-                "'build_alias=arm64-apple-darwin20.0.0' "
+                "'-oldincludedir=/Users/runner/miniforge3/conda-bld/python-split_1708115673525/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' "
+                "'--disable-shared' 'build_alias=x86_64-apple-darwin13.4.0' "
                 "'host_alias=arm64-apple-darwin20.0.0' "
                 "'PKG_CONFIG_PATH=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/pkgconfig' "
                 "'MACHDEP=darwin' 'CC=arm64-apple-darwin20.0.0-clang' "
                 "'CFLAGS="
                 ''
-                '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                '-pipe -isystem '
+                '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                '-isystem '
                 '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                 ' '
                 ' '
                 "-arch arm64 ' 'LDFLAGS="
                 ''
-                '-Wl,-pie -Wl,-headerpad_max_install_names '
-                '-Wl,-dead_strip_dylibs '
+                '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                 '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                 "-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib' "
                 "'CPPFLAGS="
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
                 '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                '-mmacosx-version-min=11.1 '
+                '-mmacosx-version-min=11.0 '
                 "-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include'",
  'CONFINCLUDEDIR': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'CONFINCLUDEPY': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include/python3.11',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/build-static/coverage.info',
+ 'COVERAGE_INFO': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static/coverage.info',
  'COVERAGE_LCOV_OPTIONS': '--rc lcov_branch_coverage=1',
- 'COVERAGE_REPORT': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/build-static/lcov-report',
+ 'COVERAGE_REPORT': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--rc lcov_branch_coverage=1 --branch-coverage '
                             '--title "CPython 3.11 LCOV report [commit $(shell '
                             ')]"',
  'CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+             '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
              ''
              ''
              '-D_FORTIFY_SOURCE=2 -isystem '
              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-             '-mmacosx-version-min=11.1 '
+             '-mmacosx-version-min=11.0 '
              '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
              ''
              ''
              '-D_FORTIFY_SOURCE=2 -isystem '
              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-             '-mmacosx-version-min=11.1 '
+             '-mmacosx-version-min=11.0 '
              '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'CXX': 'arm64-apple-darwin20.0.0-clang++',
- 'DECIMAL_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_decimal/libmpdec '
+ 'DECIMAL_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_decimal/libmpdec '
                    '-DUNIVERSAL=1',
  'DECIMAL_LDFLAGS': '-lm Modules/_decimal/libmpdec/libmpdec.a',
- 'DEEPFREEZE_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Tools/scripts/deepfreeze.py '
-                    '_bootstrap_python '
-                    '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Programs/_freeze_module.py '
+ 'DEEPFREEZE_C': 'Python/deepfreeze/deepfreeze.c',
+ 'DEEPFREEZE_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Tools/scripts/deepfreeze.py '
+                    '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Programs/_freeze_module.py '
                     '\\',
  'DEEPFREEZE_OBJS': 'Python/deepfreeze/deepfreeze.o',
  'DESTDIRS': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv '
@@ -175,20 +169,20 @@ build_time_vars = {'ABIFLAGS': '',
  'ENSUREPIP': 'no',
  'EXE': '',
  'EXEMODE': 755,
- 'EXPAT_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/expat',
- 'EXPAT_LDFLAGS': '-lm Modules/expat/libexpat.a',
+ 'EXPAT_CFLAGS': '',
+ 'EXPAT_LDFLAGS': '-lexpat',
  'EXPORTSFROM': '',
  'EXPORTSYMS': '',
  'EXTRATESTOPTS': '',
  'EXT_SUFFIX': '.cpython-311-darwin.so',
  'FILEMODE': 644,
  'FLOAT_WORDS_BIGENDIAN': 0,
- 'FREEZE_MODULE': './_bootstrap_python '
-                  '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Programs/_freeze_module.py',
- 'FREEZE_MODULE_BOOTSTRAP': './Programs/_freeze_module',
- 'FREEZE_MODULE_BOOTSTRAP_DEPS': 'Programs/_freeze_module',
- 'FREEZE_MODULE_DEPS': '_bootstrap_python '
-                       '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Programs/_freeze_module.py',
+ 'FREEZE_MODULE': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python '
+                  '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Programs/_freeze_module.py',
+ 'FREEZE_MODULE_BOOTSTRAP': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python '
+                            '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Programs/_freeze_module.py',
+ 'FREEZE_MODULE_BOOTSTRAP_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Programs/_freeze_module.py',
+ 'FREEZE_MODULE_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Programs/_freeze_module.py',
  'FROZEN_FILES_IN': '\\',
  'FROZEN_FILES_OUT': '\\',
  'GETPGRP_HAVE_ARG': 0,
@@ -413,6 +407,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_LINUX_CAN_RAW_FD_FRAMES': 0,
  'HAVE_LINUX_CAN_RAW_H': 0,
  'HAVE_LINUX_CAN_RAW_JOIN_FILTERS': 0,
+ 'HAVE_LINUX_LIMITS_H': 0,
  'HAVE_LINUX_MEMFD_H': 0,
  'HAVE_LINUX_NETLINK_H': 0,
  'HAVE_LINUX_QRTR_H': 0,
@@ -495,6 +490,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_RENAMEAT': 1,
  'HAVE_RL_APPEND_HISTORY': 1,
  'HAVE_RL_CATCH_SIGNAL': 1,
+ 'HAVE_RL_COMPDISP_FUNC_T': 1,
  'HAVE_RL_COMPLETION_APPEND_CHARACTER': 1,
  'HAVE_RL_COMPLETION_DISPLAY_MATCHES_HOOK': 1,
  'HAVE_RL_COMPLETION_MATCHES': 1,
@@ -675,7 +671,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_ZLIB_H': 0,
  'HAVE__GETPTY': 0,
  'HOSTRUNNER': '',
- 'HOST_GNU_TYPE': 'arm64-apple-darwin20.0.0',
+ 'HOST_GNU_TYPE': 'aarch64-apple-darwin20.0.0',
  'INCLDIRSTOMAKE': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include/python3.11 '
@@ -693,23 +689,26 @@ build_time_vars = {'ABIFLAGS': '',
  'LDCXXSHARED': 'arm64-apple-darwin20.0.0-clang++ -bundle -undefined '
                 'dynamic_lookup',
  'LDFLAGS': ''
-            '-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
+            ''
+            '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
             '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
             '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
             ''
-            '-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
+            ''
+            '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
             '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
             '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
+ 'LDFLAGS_NODIST': '',
  'LDLIBRARY': 'libpython3.11.a',
  'LDLIBRARYDIR': '',
  'LDSHARED': 'arm64-apple-darwin20.0.0-clang -bundle -undefined dynamic_lookup '
              ''
-             '-Wl,-pie '
+             ''
              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
              '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
              '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
              ''
-             '-Wl,-pie '
+             ''
              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
              '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
              '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
@@ -718,76 +717,75 @@ build_time_vars = {'ABIFLAGS': '',
  'LIBDEST': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/python3.11',
  'LIBDIR': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
  'LIBEXPAT_A': 'Modules/expat/libexpat.a',
- 'LIBEXPAT_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/expat '
-                    '-DNDEBUG -fwrapv -O2 -Wall '
+ 'LIBEXPAT_CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
                     ''
-                    '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                    '-pipe -isystem '
+                    '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                    '-isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ' '
                     ' '
                     '-arch arm64  '
                     ''
-                    '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                    '-pipe -isystem '
+                    '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                    '-isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ' '
                     ' '
                     '-arch arm64   -std=c11 '
-                    '-Werror=implicit-function-declaration -fvisibility=hidden '
-                    '-fprofile-instr-use=code.profclangd '
-                    '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal '
+                    '-Werror=implicit-function-declaration '
+                    '-fvisibility=hidden  '
+                    '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal '
                     '-IObjects -IInclude -IPython -I. '
-                    '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                    '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                     ''
                     ''
                     '-D_FORTIFY_SOURCE=2 -isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                    '-mmacosx-version-min=11.1 '
+                    '-mmacosx-version-min=11.0 '
                     '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ''
                     ''
                     '-D_FORTIFY_SOURCE=2 -isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                    '-mmacosx-version-min=11.1 '
+                    '-mmacosx-version-min=11.0 '
                     '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'LIBEXPAT_HEADERS': '\\',
  'LIBEXPAT_OBJS': '\\',
  'LIBFFI_INCLUDEDIR': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'LIBM': '',
  'LIBMPDEC_A': 'Modules/_decimal/libmpdec/libmpdec.a',
- 'LIBMPDEC_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_decimal/libmpdec '
+ 'LIBMPDEC_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_decimal/libmpdec '
                     '-DUNIVERSAL=1 -DNDEBUG -fwrapv -O2 -Wall '
                     ''
-                    '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                    '-pipe -isystem '
+                    '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                    '-isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ' '
                     ' '
                     '-arch arm64  '
                     ''
-                    '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                    '-pipe -isystem '
+                    '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                    '-isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ' '
                     ' '
                     '-arch arm64   -std=c11 '
-                    '-Werror=implicit-function-declaration -fvisibility=hidden '
-                    '-fprofile-instr-use=code.profclangd '
-                    '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal '
+                    '-Werror=implicit-function-declaration '
+                    '-fvisibility=hidden  '
+                    '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal '
                     '-IObjects -IInclude -IPython -I. '
-                    '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                    '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                     ''
                     ''
                     '-D_FORTIFY_SOURCE=2 -isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                    '-mmacosx-version-min=11.1 '
+                    '-mmacosx-version-min=11.0 '
                     '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                     ''
                     ''
                     '-D_FORTIFY_SOURCE=2 -isystem '
                     '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                    '-mmacosx-version-min=11.1 '
+                    '-mmacosx-version-min=11.0 '
                     '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'LIBMPDEC_HEADERS': '\\',
  'LIBMPDEC_OBJS': '\\',
@@ -810,20 +808,20 @@ build_time_vars = {'ABIFLAGS': '',
  'LIPO_INTEL64_FLAGS': '',
  'LLVM_PROF_ERR': 'no',
  'LLVM_PROF_FILE': 'LLVM_PROFILE_FILE="code-%p.profclangr"',
- 'LLVM_PROF_MERGER': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/_build_env/bin/llvm-profdata '
+ 'LLVM_PROF_MERGER': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/_build_env/bin/llvm-profdata '
                      'merge -output=code.profclangd *.profclangr',
  'LN': 'ln',
  'LOCALMODLIBS': '',
  'MACHDEP': 'darwin',
  'MACHDEP_OBJS': '',
  'MACHDESTLIB': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/python3.11',
- 'MACOSX_DEPLOYMENT_TARGET': '11.1',
+ 'MACOSX_DEPLOYMENT_TARGET': '11.0',
  'MAINCC': 'arm64-apple-darwin20.0.0-clang',
  'MAJOR_IN_MKDEV': 0,
  'MAJOR_IN_SYSMACROS': 0,
- 'MAKESETUP': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/makesetup',
+ 'MAKESETUP': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/makesetup',
  'MANDIR': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share/man',
- 'MKDIR_P': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/install-sh '
+ 'MKDIR_P': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/install-sh '
             '-c -d',
  'MODBUILT_NAMES': 'atexit  faulthandler  posix  _signal  _tracemalloc  '
                    '_codecs  _collections  errno  _io  itertools  _sre  '
@@ -854,7 +852,7 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE_BINASCII_LDFLAGS': '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                             '-lz',
  'MODULE_BINASCII_STATE': 'yes',
- 'MODULE_CMATH_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_math.h',
+ 'MODULE_CMATH_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_math.h',
  'MODULE_CMATH_LDFLAGS': '',
  'MODULE_CMATH_STATE': 'yes',
  'MODULE_ERRNO_LDFLAGS': '',
@@ -863,7 +861,7 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE_FCNTL_STATE': 'yes',
  'MODULE_GRP_STATE': 'yes',
  'MODULE_ITERTOOLS_LDFLAGS': '',
- 'MODULE_MATH_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_math.h',
+ 'MODULE_MATH_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_math.h',
  'MODULE_MATH_LDFLAGS': '',
  'MODULE_MATH_STATE': 'yes',
  'MODULE_MMAP_STATE': 'yes',
@@ -875,9 +873,9 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE_POSIX_LDFLAGS': '',
  'MODULE_PWD_LDFLAGS': '',
  'MODULE_PWD_STATE': 'yes',
- 'MODULE_PYEXPAT_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/expat',
- 'MODULE_PYEXPAT_DEPS': '\\ Modules/expat/libexpat.a',
- 'MODULE_PYEXPAT_LDFLAGS': '-lm Modules/expat/libexpat.a',
+ 'MODULE_PYEXPAT_CFLAGS': '',
+ 'MODULE_PYEXPAT_DEPS': '',
+ 'MODULE_PYEXPAT_LDFLAGS': '-lexpat',
  'MODULE_PYEXPAT_STATE': 'yes',
  'MODULE_RESOURCE_STATE': 'yes',
  'MODULE_SELECT_STATE': 'yes',
@@ -886,8 +884,8 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE_TERMIOS_STATE': 'yes',
  'MODULE_TIME_LDFLAGS': '',
  'MODULE_TIME_STATE': 'yes',
- 'MODULE_UNICODEDATA_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/unicodedata_db.h '
-                            '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/unicodename_db.h',
+ 'MODULE_UNICODEDATA_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/unicodedata_db.h '
+                            '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/unicodename_db.h',
  'MODULE_UNICODEDATA_STATE': 'yes',
  'MODULE_XXLIMITED_35_STATE': 'yes',
  'MODULE_XXLIMITED_STATE': 'yes',
@@ -900,22 +898,22 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE__ASYNCIO_STATE': 'yes',
  'MODULE__BISECT_STATE': 'yes',
  'MODULE__BLAKE2_CFLAGS': '',
- 'MODULE__BLAKE2_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2-config.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2-impl.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2b-load-sse2.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2b-load-sse41.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2b-ref.c '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2b-round.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2b.c '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s-load-sse2.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s-load-sse41.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s-load-xop.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s-ref.c '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s-round.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/impl/blake2s.c '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_blake2/blake2module.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__BLAKE2_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2-config.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2-impl.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2b-load-sse2.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2b-load-sse41.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2b-ref.c '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2b-round.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2b.c '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s-load-sse2.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s-load-sse41.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s-load-xop.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s-ref.c '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s-round.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/impl/blake2s.c '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_blake2/blake2module.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__BLAKE2_LDFLAGS': '',
  'MODULE__BLAKE2_STATE': 'yes',
  'MODULE__BZ2_CFLAGS': '',
@@ -934,31 +932,30 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE__CRYPT_LDFLAGS': '',
  'MODULE__CRYPT_STATE': 'yes',
  'MODULE__CSV_STATE': 'yes',
- 'MODULE__CTYPES_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ctypes/ctypes.h',
+ 'MODULE__CTYPES_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ctypes/ctypes.h',
  'MODULE__CTYPES_TEST_LDFLAGS': '-lm',
  'MODULE__CTYPES_TEST_STATE': 'yes',
  'MODULE__DATETIME_LDFLAGS': '',
  'MODULE__DATETIME_STATE': 'yes',
- 'MODULE__DECIMAL_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_decimal/libmpdec '
+ 'MODULE__DECIMAL_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_decimal/libmpdec '
                            '-DUNIVERSAL=1',
- 'MODULE__DECIMAL_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_decimal/docstrings.h '
+ 'MODULE__DECIMAL_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_decimal/docstrings.h '
                          '\\ Modules/_decimal/libmpdec/libmpdec.a',
  'MODULE__DECIMAL_LDFLAGS': '-lm Modules/_decimal/libmpdec/libmpdec.a',
  'MODULE__DECIMAL_STATE': 'yes',
- 'MODULE__ELEMENTTREE_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/expat',
- 'MODULE__ELEMENTTREE_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/pyexpat.c '
-                             '\\ Modules/expat/libexpat.a',
+ 'MODULE__ELEMENTTREE_CFLAGS': '',
+ 'MODULE__ELEMENTTREE_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/pyexpat.c',
  'MODULE__ELEMENTTREE_STATE': 'yes',
  'MODULE__FUNCTOOLS_LDFLAGS': '',
  'MODULE__GDBM_STATE': 'missing',
  'MODULE__HASHLIB_CFLAGS': '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
- 'MODULE__HASHLIB_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__HASHLIB_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__HASHLIB_LDFLAGS': '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib   '
                             '-lcrypto',
  'MODULE__HASHLIB_STATE': 'yes',
  'MODULE__HEAPQ_STATE': 'yes',
- 'MODULE__IO_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_io',
- 'MODULE__IO_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_io/_iomodule.h',
+ 'MODULE__IO_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_io',
+ 'MODULE__IO_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_io/_iomodule.h',
  'MODULE__IO_LDFLAGS': '',
  'MODULE__IO_STATE': 'yes',
  'MODULE__JSON_STATE': 'yes',
@@ -968,15 +965,15 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE__LZMA_LDFLAGS': '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                          '-llzma',
  'MODULE__LZMA_STATE': 'yes',
- 'MODULE__MD5_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__MD5_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__MD5_STATE': 'yes',
  'MODULE__MULTIBYTECODEC_STATE': 'yes',
- 'MODULE__MULTIPROCESSING_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_multiprocessing',
+ 'MODULE__MULTIPROCESSING_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_multiprocessing',
  'MODULE__MULTIPROCESSING_STATE': 'yes',
  'MODULE__OPCODE_STATE': 'yes',
  'MODULE__OPERATOR_LDFLAGS': '',
  'MODULE__PICKLE_STATE': 'yes',
- 'MODULE__POSIXSHMEM_CFLAGS': '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_multiprocessing',
+ 'MODULE__POSIXSHMEM_CFLAGS': '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_multiprocessing',
  'MODULE__POSIXSHMEM_LDFLAGS': '',
  'MODULE__POSIXSHMEM_STATE': 'yes',
  'MODULE__POSIXSUBPROCESS_STATE': 'yes',
@@ -985,44 +982,44 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE__SCPROXY_LDFLAGS': '-framework SystemConfiguration -framework '
                             'CoreFoundation',
  'MODULE__SCPROXY_STATE': 'yes',
- 'MODULE__SHA1_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__SHA1_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__SHA1_STATE': 'yes',
- 'MODULE__SHA256_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__SHA256_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__SHA256_STATE': 'yes',
- 'MODULE__SHA3_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sha3/sha3.c '
-                      '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sha3/sha3.h '
-                      '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__SHA3_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sha3/sha3.c '
+                      '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sha3/sha3.h '
+                      '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__SHA3_STATE': 'yes',
- 'MODULE__SHA512_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/hashlib.h',
+ 'MODULE__SHA512_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/hashlib.h',
  'MODULE__SHA512_STATE': 'yes',
  'MODULE__SIGNAL_LDFLAGS': '',
- 'MODULE__SOCKET_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/socketmodule.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/addrinfo.h '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/getaddrinfo.c '
-                        '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/getnameinfo.c',
+ 'MODULE__SOCKET_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/socketmodule.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/addrinfo.h '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/getaddrinfo.c '
+                        '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/getnameinfo.c',
  'MODULE__SOCKET_STATE': 'yes',
  'MODULE__SQLITE3_CFLAGS': '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                           '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite',
- 'MODULE__SQLITE3_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/connection.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/cursor.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/microprotocols.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/module.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/prepare_protocol.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/row.h '
-                         '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_sqlite/util.h',
+                           '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite',
+ 'MODULE__SQLITE3_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/connection.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/cursor.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/microprotocols.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/module.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/prepare_protocol.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/row.h '
+                         '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_sqlite/util.h',
  'MODULE__SQLITE3_LDFLAGS': '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                             '-lsqlite3',
  'MODULE__SQLITE3_STATE': 'yes',
  'MODULE__SRE_LDFLAGS': '',
  'MODULE__SSL_CFLAGS': '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
- 'MODULE__SSL_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl.h '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl/cert.c '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl/debughelpers.c '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl/misc.c '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl_data.h '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl_data_111.h '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/_ssl_data_300.h '
-                     '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/socketmodule.h',
+ 'MODULE__SSL_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl.h '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl/cert.c '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl/debughelpers.c '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl/misc.c '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl_data.h '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl_data_111.h '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/_ssl_data_300.h '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/socketmodule.h',
  'MODULE__SSL_LDFLAGS': '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib  '
                         '-lssl -lcrypto',
  'MODULE__SSL_STATE': 'yes',
@@ -1032,8 +1029,9 @@ build_time_vars = {'ABIFLAGS': '',
  'MODULE__STRUCT_STATE': 'yes',
  'MODULE__SYMTABLE_LDFLAGS': '',
  'MODULE__TESTBUFFER_STATE': 'yes',
- 'MODULE__TESTCAPI_DEPS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Modules/testcapi_long.h',
+ 'MODULE__TESTCAPI_DEPS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Modules/testcapi_long.h',
  'MODULE__TESTCAPI_STATE': 'yes',
+ 'MODULE__TESTCLINIC_STATE': 'yes',
  'MODULE__TESTIMPORTMULTIPLE_STATE': 'yes',
  'MODULE__TESTINTERNALCAPI_STATE': 'yes',
  'MODULE__TESTMULTIPHASE_STATE': 'yes',
@@ -1078,7 +1076,7 @@ build_time_vars = {'ABIFLAGS': '',
  'PLATLIBDIR': 'lib',
  'POBJS': '\\',
  'POSIX_SEMAPHORES_NOT_ENABLED': 0,
- 'PROFILE_TASK': '-m test --pgo',
+ 'PROFILE_TASK': '-m test --pgo --timeout=1200',
  'PTHREAD_KEY_T_IS_COMPATIBLE_WITH_INT': 0,
  'PTHREAD_SYSTEM_SCHED_SUPPORTED': 1,
  'PURIFY': '',
@@ -1090,196 +1088,194 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHONFRAMEWORKINSTALLDIR': '',
  'PYTHONFRAMEWORKPREFIX': '',
  'PYTHONPATH': '',
- 'PYTHON_FOR_BUILD': './python.exe -E',
- 'PYTHON_FOR_BUILD_DEPS': 'python.exe',
- 'PYTHON_FOR_FREEZE': './_bootstrap_python',
+ 'PYTHON_FOR_BUILD': '_PYTHON_PROJECT_BASE=/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static '
+                     '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
+                     'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static/`cat '
+                     'pybuilddir.txt`:)/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Lib '
+                     '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__darwin_darwin '
+                     '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python',
+ 'PYTHON_FOR_BUILD_DEPS': '',
+ 'PYTHON_FOR_FREEZE': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python',
  'PYTHON_FOR_REGEN': '',
  'PYTHON_HEADERS': '\\',
  'PYTHON_OBJS': '\\',
  'PY_BUILTIN_HASHLIB_HASHES': '"md5,sha1,sha256,sha512,sha3,blake2"',
  'PY_BUILTIN_MODULE_CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
                              ''
-                             '-ftree-vectorize -fPIC -fPIE '
-                             '-fstack-protector-strong -O2 -pipe -isystem '
+                             '-ftree-vectorize -fPIC -fstack-protector-strong '
+                             '-O2 -pipe -isystem '
                              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                              ' '
                              ' '
                              '-arch arm64  '
                              ''
-                             '-ftree-vectorize -fPIC -fPIE '
-                             '-fstack-protector-strong -O2 -pipe -isystem '
+                             '-ftree-vectorize -fPIC -fstack-protector-strong '
+                             '-O2 -pipe -isystem '
                              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                              ' '
                              ' '
                              '-arch arm64   -std=c11 '
                              '-Werror=implicit-function-declaration '
-                             '-fvisibility=hidden '
-                             '-fprofile-instr-use=code.profclangd '
-                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal '
+                             '-fvisibility=hidden  '
+                             '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal '
                              '-IObjects -IInclude -IPython -I. '
-                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                             '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                              ''
                              ''
                              '-D_FORTIFY_SOURCE=2 -isystem '
                              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                             '-mmacosx-version-min=11.1 '
+                             '-mmacosx-version-min=11.0 '
                              '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                              ''
                              ''
                              '-D_FORTIFY_SOURCE=2 -isystem '
                              '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                             '-mmacosx-version-min=11.1 '
+                             '-mmacosx-version-min=11.0 '
                              '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                              '-DPy_BUILD_CORE_BUILTIN',
  'PY_CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
               ''
-              '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
+              '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
               '-isystem '
               '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
               ' '
               ' '
               '-arch arm64  '
               ''
-              '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
+              '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
               '-isystem '
               '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
               ' '
               ' '
               '-arch arm64 ',
  'PY_CFLAGS_NODIST': ' -std=c11 -Werror=implicit-function-declaration '
-                     '-fvisibility=hidden -fprofile-instr-use=code.profclangd '
-                     '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal',
+                     '-fvisibility=hidden  '
+                     '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal',
  'PY_COERCE_C_LOCALE': 1,
  'PY_CORE_CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
                    ''
-                   '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                   '-pipe -isystem '
+                   '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                   '-isystem '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    ' '
                    ' '
                    '-arch arm64  '
                    ''
-                   '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
-                   '-pipe -isystem '
+                   '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+                   '-isystem '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    ' '
                    ' '
                    '-arch arm64   -std=c11 '
-                   '-Werror=implicit-function-declaration -fvisibility=hidden '
-                   '-fprofile-instr-use=code.profclangd '
-                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal '
+                   '-Werror=implicit-function-declaration -fvisibility=hidden  '
+                   '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal '
                    '-IObjects -IInclude -IPython -I. '
-                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                   '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                    ''
                    ''
                    '-D_FORTIFY_SOURCE=2 -isystem '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                   '-mmacosx-version-min=11.1 '
+                   '-mmacosx-version-min=11.0 '
                    '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    ''
                    ''
                    '-D_FORTIFY_SOURCE=2 -isystem '
                    '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                   '-mmacosx-version-min=11.1 '
+                   '-mmacosx-version-min=11.0 '
                    '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                    '-DPy_BUILD_CORE',
  'PY_CORE_LDFLAGS': ''
                     ''
-                    '-Wl,-pie -Wl,-headerpad_max_install_names '
-                    '-Wl,-dead_strip_dylibs '
+                    '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                     '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                     '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                     ''
                     ''
-                    '-Wl,-pie -Wl,-headerpad_max_install_names '
-                    '-Wl,-dead_strip_dylibs '
+                    '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                     '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                     '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                     ' -Wl,-export_dynamic -g',
  'PY_CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-                '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                 ''
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
                 '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                '-mmacosx-version-min=11.1 '
+                '-mmacosx-version-min=11.0 '
                 '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                 ''
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
                 '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                '-mmacosx-version-min=11.1 '
+                '-mmacosx-version-min=11.0 '
                 '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
  'PY_ENABLE_SHARED': 0,
  'PY_FORMAT_SIZE_T': '"z"',
  'PY_LDFLAGS': ''
                ''
-               '-Wl,-pie -Wl,-headerpad_max_install_names '
-               '-Wl,-dead_strip_dylibs '
+               '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                ''
                ''
-               '-Wl,-pie -Wl,-headerpad_max_install_names '
-               '-Wl,-dead_strip_dylibs '
+               '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib',
  'PY_LDFLAGS_NODIST': ' -Wl,-export_dynamic -g',
  'PY_LDFLAGS_NOLTO': ''
                      ''
-                     '-Wl,-pie -Wl,-headerpad_max_install_names '
-                     '-Wl,-dead_strip_dylibs '
+                     '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                      '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                      '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                      ''
                      ''
-                     '-Wl,-pie -Wl,-headerpad_max_install_names '
-                     '-Wl,-dead_strip_dylibs '
+                     '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
                      '-Wl,-rpath,/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
                      '-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib '
-                     '-fno-lto',
+                     '=thin',
  'PY_SQLITE_ENABLE_LOAD_EXTENSION': 1,
  'PY_SQLITE_HAVE_SERIALIZE': 1,
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
  'PY_STDMODULE_CFLAGS': '-DNDEBUG -fwrapv -O2 -Wall '
                         ''
-                        '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
-                        '-O2 -pipe -isystem '
+                        '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
+                        '-pipe -isystem '
                         '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                         ' '
                         ' '
                         '-arch arm64  '
                         ''
-                        '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
-                        '-O2 -pipe -isystem '
+                        '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
+                        '-pipe -isystem '
                         '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                         ' '
                         ' '
                         '-arch arm64   -std=c11 '
                         '-Werror=implicit-function-declaration '
-                        '-fvisibility=hidden '
-                        '-fprofile-instr-use=code.profclangd '
-                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include/internal '
+                        '-fvisibility=hidden  '
+                        '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include/internal '
                         '-IObjects -IInclude -IPython -I. '
-                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Include '
+                        '-I/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Include '
                         ''
                         ''
                         '-D_FORTIFY_SOURCE=2 -isystem '
                         '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                        '-mmacosx-version-min=11.1 '
+                        '-mmacosx-version-min=11.0 '
                         '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
                         ''
                         ''
                         '-D_FORTIFY_SOURCE=2 -isystem '
                         '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include '
-                        '-mmacosx-version-min=11.1 '
+                        '-mmacosx-version-min=11.0 '
                         '-I/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include',
- 'PY_SUPPORT_TIER': 0,
+ 'PY_SUPPORT_TIER': 2,
  'Py_DEBUG': 0,
  'Py_ENABLE_SHARED': 0,
  'Py_HASH_ALGORITHM': 0,
  'Py_STATS': 0,
+ 'Py_SUNOS_VERSION': 0,
  'Py_TRACE_REFS': 0,
  'QUICKTESTOPTS': '-x test_subprocess test_io test_lib2to3 \\',
  'READELF': ':',
@@ -1318,7 +1314,7 @@ build_time_vars = {'ABIFLAGS': '',
             'Modules/_sre   Modules/_xxtestfuzz   Modules/cjkcodecs   '
             'Modules/expat   Objects   Parser   Programs   Python   '
             'Python/frozen_modules   Python/deepfreeze',
- 'SRC_GDB_HOOKS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Tools/gdb/libpython.py',
+ 'SRC_GDB_HOOKS': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Tools/gdb/libpython.py',
  'STATIC_LIBPYTHON': 1,
  'STDC_HEADERS': 1,
  'STRICT_SYSV_CURSES': "/* Don't use ncurses extensions */",
@@ -1329,10 +1325,22 @@ build_time_vars = {'ABIFLAGS': '',
  'SYS_SELECT_WITH_SYS_TIME': 1,
  'TESTOPTS': '',
  'TESTPATH': '',
- 'TESTPYTHON': './python.exe -E',
+ 'TESTPYTHON': '_PYTHON_PROJECT_BASE=/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static '
+               '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
+               'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
+               '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static/`cat '
+               'pybuilddir.txt`:)/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Lib '
+               '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__darwin_darwin '
+               '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python',
  'TESTPYTHONOPTS': '',
- 'TESTRUNNER': './python.exe -E '
-               '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Tools/scripts/run_tests.py',
+ 'TESTRUNNER': '_PYTHON_PROJECT_BASE=/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static '
+               '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
+               'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
+               '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static/`cat '
+               'pybuilddir.txt`:)/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Lib '
+               '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__darwin_darwin '
+               '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-python-install/bin/python '
+               '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Tools/scripts/run_tests.py',
  'TESTSUBDIRS': 'ctypes/test \\',
  'TESTTIMEOUT': 1200,
  'TEST_MODULES': 'yes',
@@ -1343,10 +1351,10 @@ build_time_vars = {'ABIFLAGS': '',
  'TZPATH': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share/zoneinfo:/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share/tzinfo',
  'UNICODE_DEPS': '\\',
  'UNIVERSALSDK': '',
- 'UPDATE_FILE': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/Tools/scripts/update_file.py',
+ 'UPDATE_FILE': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/Tools/scripts/update_file.py',
  'USE_COMPUTED_GOTOS': 1,
  'VERSION': '3.11',
- 'VPATH': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work',
+ 'VPATH': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work',
  'WASM_ASSETS_DIR': './Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv',
  'WASM_STDLIB': './Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/python3.11/os.py',
  'WHEEL_PKG_DIR': '',
@@ -1363,9 +1371,9 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work/build-static',
- 'abs_srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work',
+ 'abs_builddir': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work/build-static',
+ 'abs_srcdir': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work',
  'datarootdir': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/share',
  'exec_prefix': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv',
  'prefix': '/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv',
- 'srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ecjhryeyil/croot/python-split_1677695225335/work'}
+ 'srcdir': '/Users/runner/miniforge3/conda-bld/python-split_1708115673525/work'}

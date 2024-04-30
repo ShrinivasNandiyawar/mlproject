@@ -1778,12 +1778,21 @@ def render_doc(thing, title='Python Library Documentation: %s', forceload=0,
     return title % desc + '\n\n' + renderer.document(object, name)
 
 def doc(thing, title='Python Library Documentation: %s', forceload=0,
-        output=None):
+        output=None, is_cli=False):
     """Display text documentation, given an object or a path to an object."""
     if output is None:
-        pager(render_doc(thing, title, forceload))
+        try:
+            pager(render_doc(thing, title, forceload))
+        except ImportError as exc:
+            if is_cli:
+                raise
+            print(exc)
     else:
-        output.write(render_doc(thing, title, forceload, plaintext))
+        try:
+            s = render_doc(thing, title, forceload, plaintext)
+        except ImportError as exc:
+            s = str(exc)
+        output.write(s)
 
 def writedoc(thing, forceload=0):
     """Write HTML documentation to a file in the current directory."""
@@ -1998,7 +2007,10 @@ class Helper:
     _GoInteractive = object()
     def __call__(self, request=_GoInteractive):
         if request is not self._GoInteractive:
-            self.help(request)
+            try:
+                self.help(request)
+            except ImportError as e:
+                self.output.write(f'{e}\n')
         else:
             self.intro()
             self.interact()
@@ -2039,8 +2051,8 @@ has the same effect as typing a particular string at the help> prompt.
             self.output.flush()
             return self.input.readline()
 
-    def help(self, request):
-        if type(request) is type(''):
+    def help(self, request, is_cli=False):
+        if isinstance(request, str):
             request = request.strip()
             if request == 'keywords': self.listkeywords()
             elif request == 'symbols': self.listsymbols()
@@ -2051,30 +2063,32 @@ has the same effect as typing a particular string at the help> prompt.
             elif request in self.symbols: self.showsymbol(request)
             elif request in ['True', 'False', 'None']:
                 # special case these keywords since they are objects too
-                doc(eval(request), 'Help on %s:')
+                doc(eval(request), 'Help on %s:', is_cli=is_cli)
             elif request in self.keywords: self.showtopic(request)
             elif request in self.topics: self.showtopic(request)
-            elif request: doc(request, 'Help on %s:', output=self._output)
-            else: doc(str, 'Help on %s:', output=self._output)
+            elif request: doc(request, 'Help on %s:', output=self._output, is_cli=is_cli)
+            else: doc(str, 'Help on %s:', output=self._output, is_cli=is_cli)
         elif isinstance(request, Helper): self()
-        else: doc(request, 'Help on %s:', output=self._output)
+        else: doc(request, 'Help on %s:', output=self._output, is_cli=is_cli)
         self.output.write('\n')
 
     def intro(self):
-        self.output.write('''
-Welcome to Python {0}'s help utility!
-
-If this is your first time using Python, you should definitely check out
-the tutorial on the internet at https://docs.python.org/{0}/tutorial/.
+        self.output.write('''\
+Welcome to Python {0}'s help utility! If this is your first time using
+Python, you should definitely check out the tutorial at
+https://docs.python.org/{0}/tutorial/.
 
 Enter the name of any module, keyword, or topic to get help on writing
-Python programs and using Python modules.  To quit this help utility and
-return to the interpreter, just type "quit".
+Python programs and using Python modules.  To get a list of available
+modules, keywords, symbols, or topics, enter "modules", "keywords",
+"symbols", or "topics".
 
-To get a list of available modules, keywords, symbols, or topics, type
-"modules", "keywords", "symbols", or "topics".  Each module also comes
-with a one-line summary of what it does; to list the modules whose name
-or summary contain a given string such as "spam", type "modules spam".
+Each module also comes with a one-line summary of what it does; to list
+the modules whose name or summary contain a given string such as "spam",
+enter "modules spam".
+
+To quit this help utility and return to the interpreter,
+enter "q" or "quit".
 '''.format('%d.%d' % sys.version_info[:2]))
 
     def list(self, items, columns=4, width=80):
@@ -2795,7 +2809,7 @@ def cli():
                     else:
                         writedoc(arg)
                 else:
-                    help.help(arg)
+                    help.help(arg, is_cli=True)
             except (ImportError, ErrorDuringImport) as value:
                 print(value)
                 sys.exit(1)

@@ -833,10 +833,8 @@ class SysLogHandler(logging.Handler):
         "local7":       LOG_LOCAL7,
         }
 
-    #The map below appears to be trivially lowercasing the key. However,
-    #there's more to it than meets the eye - in some locales, lowercasing
-    #gives unexpected results. See SF #1524081: in the Turkish locale,
-    #"INFO".lower() != "info"
+    # Originally added to work around GH-43683. Unnecessary since GH-50043 but kept
+    # for backwards compatibility.
     priority_map = {
         "DEBUG" : "debug",
         "INFO" : "info",
@@ -891,6 +889,13 @@ class SysLogHandler(logging.Handler):
                 raise
 
     def createSocket(self):
+        """
+        Try to create a socket and, if it's not a datagram socket, connect it
+        to the other end. This method is called during handler initialization,
+        but it's not regarded as an error if the other end isn't listening yet
+        --- the method will be called again when emitting an event,
+        if there is no socket at that point.
+        """
         address = self.address
         socktype = self.socktype
 
@@ -898,7 +903,7 @@ class SysLogHandler(logging.Handler):
             self.unixsocket = True
             # Syslog server may be unavailable during handler initialisation.
             # C's openlog() function also ignores connection errors.
-            # Moreover, we ignore these errors while logging, so it not worse
+            # Moreover, we ignore these errors while logging, so it's not worse
             # to ignore it also here.
             try:
                 self._connect_unixsocket(address)
@@ -1392,7 +1397,7 @@ class MemoryHandler(BufferingHandler):
         records to the target, if there is one. Override if you want
         different behaviour.
 
-        The record buffer is also cleared by this operation.
+        The record buffer is only cleared if a target has been set.
         """
         self.acquire()
         try:

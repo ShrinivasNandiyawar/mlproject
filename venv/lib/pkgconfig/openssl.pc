@@ -1,9 +1,7 @@
-prefix=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-includedir=${prefix}/include
+libdir=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib
+includedir=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include
 
 Name: OpenSSL
 Description: Secure Sockets Layer and cryptography libraries and tools
-Version: 1.1.1w
+Version: 3.3.0
 Requires: libssl libcrypto

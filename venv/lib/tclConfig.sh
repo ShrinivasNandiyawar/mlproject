@@ -13,7 +13,7 @@
 TCL_VERSION='8.6'
 TCL_MAJOR_VERSION='8'
 TCL_MINOR_VERSION='6'
-TCL_PATCH_LEVEL='.12'
+TCL_PATCH_LEVEL='.13'
 
 # C compiler to use for compilation.
 TCL_CC='arm64-apple-darwin20.0.0-clang'
@@ -27,7 +27,7 @@ TCL_DBGX=
 
 # Default flags used in an optimized and debuggable build, respectively.
 TCL_CFLAGS_DEBUG='-g'
-TCL_CFLAGS_OPTIMIZE='-Os'
+TCL_CFLAGS_OPTIMIZE='-O2'
 
 # Default linker flags used in an optimized and debuggable build, respectively.
 TCL_LDFLAGS_DEBUG=''
@@ -57,7 +57,7 @@ TCL_SHLIB_CFLAGS='-fno-common'
 TCL_CFLAGS_WARNING='-Wall -Wpointer-arith'
 
 # Extra flags to pass to cc:
-TCL_EXTRA_CFLAGS='-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include -fdebug-prefix-map=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c011255d-355d-4e10-9d06-2a364b791019h2p45nxx/croots/recipe/tk_1654088770111/work=/usr/local/src/conda/tk-8.6.12 -fdebug-prefix-map=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv=/usr/local/src/conda-prefix -pipe  -D_FORTIFY_SOURCE=2 -isystem /Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include -mmacosx-version-min=11.1 '
+TCL_EXTRA_CFLAGS='-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/tk_1699201850000/work=/usr/local/src/conda/tk-8.6.13 -fdebug-prefix-map=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv=/usr/local/src/conda-prefix -pipe  -D_FORTIFY_SOURCE=2 -isystem /Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include -mmacosx-version-min=11.0 '
 
 # Base command to use for combining object files into a shared library:
 TCL_SHLIB_LD='${CC} -dynamiclib ${CFLAGS} ${LDFLAGS} -Wl,-single_module'
@@ -90,7 +90,7 @@ TCL_LD_SEARCH_FLAGS=''
 
 # Additional object files linked with Tcl to provide compatibility
 # with standard facilities from ANSI C or POSIX.
-TCL_COMPAT_OBJS=''
+TCL_COMPAT_OBJS=' memcmp.o strstr.o strtoul.o'
 
 # Name of the ranlib program to use.
 TCL_RANLIB='arm64-apple-darwin20.0.0-ranlib'
@@ -100,7 +100,7 @@ TCL_LIB_FLAG='-ltcl8.6'
 
 # String to pass to linker to pick up the Tcl library from its
 # build directory.
-TCL_BUILD_LIB_SPEC='-L/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c011255d-355d-4e10-9d06-2a364b791019h2p45nxx/croots/recipe/tk_1654088770111/work/tcl8.6.12/unix -ltcl8.6'
+TCL_BUILD_LIB_SPEC='-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib -ltcl8.6'
 
 # String to pass to linker to pick up the Tcl library from its
 # installed directory.
@@ -135,7 +135,7 @@ TCL_UNSHARED_LIB_SUFFIX='${VERSION}.a'
 # different place than the directory containing the source files, this
 # points to the location of the sources, not the location where Tcl was
 # compiled.
-TCL_SRC_DIR='/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c011255d-355d-4e10-9d06-2a364b791019h2p45nxx/croots/recipe/tk_1654088770111/work/tcl8.6.12'
+TCL_SRC_DIR='/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include'
 
 # List of standard directories in which to look for packages during
 # "package require" commands.  Contains the "prefix" directory plus also
@@ -153,14 +153,14 @@ TCL_STUB_LIB_FLAG='-ltclstub8.6'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # build directory.
-TCL_BUILD_STUB_LIB_SPEC='-L/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c011255d-355d-4e10-9d06-2a364b791019h2p45nxx/croots/recipe/tk_1654088770111/work/tcl8.6.12/unix -ltclstub8.6'
+TCL_BUILD_STUB_LIB_SPEC='-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib -ltclstub8.6'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # installed directory.
 TCL_STUB_LIB_SPEC='-L/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib -ltclstub8.6'
 
 # Path to the Tcl stub library in the build directory.
-TCL_BUILD_STUB_LIB_PATH='/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c011255d-355d-4e10-9d06-2a364b791019h2p45nxx/croots/recipe/tk_1654088770111/work/tcl8.6.12/unix/libtclstub8.6.a'
+TCL_BUILD_STUB_LIB_PATH='/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/libtclstub8.6.a'
 
 # Path to the Tcl stub library in the install directory.
 TCL_STUB_LIB_PATH='/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib/libtclstub8.6.a'

@@ -107,15 +107,6 @@ def find_function(funcname, filename):
                 return funcname, filename, lineno
     return None
 
-def getsourcelines(obj):
-    lines, lineno = inspect.findsource(obj)
-    if inspect.isframe(obj) and obj.f_globals is obj.f_locals:
-        # must be a module frame: do not try to cut a block out of it
-        return lines, 1
-    elif inspect.ismodule(obj):
-        return lines, 1
-    return inspect.getblock(lines[lineno:]), lineno+1
-
 def lasti2lineno(code, lasti):
     linestarts = list(dis.findlinestarts(code))
     linestarts.reverse()
@@ -145,6 +136,9 @@ class _ScriptTarget(str):
         if not os.path.exists(self):
             print('Error:', self.orig, 'does not exist')
             sys.exit(1)
+        if os.path.isdir(self):
+            print('Error:', self.orig, 'is a directory')
+            sys.exit(1)
 
         # Replace pdb's dir with script's dir in front of module search path.
         sys.path[0] = os.path.dirname(self)
@@ -163,7 +157,7 @@ class _ScriptTarget(str):
 
     @property
     def code(self):
-        with io.open(self) as fp:
+        with io.open_code(self) as fp:
             return f"exec(compile({fp.read()!r}, {self!r}, 'exec'))"
 
 
@@ -171,6 +165,9 @@ class _ModuleTarget(str):
     def check(self):
         try:
             self._details
+        except ImportError as e:
+            print(f"ImportError: {e}")
+            sys.exit(1)
         except Exception:
             traceback.print_exc()
             sys.exit(1)
@@ -414,8 +411,9 @@ class Pdb(bdb.Bdb, cmd.Cmd):
                 # fields are changed to be displayed
                 if newvalue is not oldvalue and newvalue != oldvalue:
                     displaying[expr] = newvalue
-                    self.message('display %s: %r  [old: %r]' %
-                                 (expr, newvalue, oldvalue))
+                    self.message('display %s: %s  [old: %s]' %
+                                 (expr, self._safe_repr(newvalue, expr),
+                                  self._safe_repr(oldvalue, expr)))
 
     def interaction(self, frame, traceback):
         # Restore the previous signal handler at the Pdb prompt.
@@ -1230,7 +1228,7 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         for i in range(n):
             name = co.co_varnames[i]
             if name in dict:
-                self.message('%s = %r' % (name, dict[name]))
+                self.message('%s = %s' % (name, self._safe_repr(dict[name], name)))
             else:
                 self.message('%s = *** undefined ***' % (name,))
     do_a = do_args
@@ -1240,7 +1238,7 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         Print the return value for the last return of a function.
         """
         if '__return__' in self.curframe_locals:
-            self.message(repr(self.curframe_locals['__return__']))
+            self.message(self._safe_repr(self.curframe_locals['__return__'], "retval"))
         else:
             self.error('Not yet returned!')
     do_rv = do_retval
@@ -1276,6 +1274,12 @@ class Pdb(bdb.Bdb, cmd.Cmd):
             self.message(func(val))
         except:
             self._error_exc()
+
+    def _safe_repr(self, obj, expr):
+        try:
+            return repr(obj)
+        except Exception as e:
+            return _rstr(f"*** repr({expr}) failed: {self._format_exc(e)} ***")
 
     def do_p(self, arg):
         """p expression
@@ -1332,6 +1336,12 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         if last is None:
             last = first + 10
         filename = self.curframe.f_code.co_filename
+        # gh-93696: stdlib frozen modules provide a useful __file__
+        # this workaround can be removed with the closure of gh-89815
+        if filename.startswith("<frozen"):
+            tmp = self.curframe.f_globals.get("__file__")
+            if isinstance(tmp, str):
+                filename = tmp
         breaklist = self.get_file_breaks(filename)
         try:
             lines = linecache.getlines(filename, self.curframe.f_globals)
@@ -1351,7 +1361,7 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         filename = self.curframe.f_code.co_filename
         breaklist = self.get_file_breaks(filename)
         try:
-            lines, lineno = getsourcelines(self.curframe)
+            lines, lineno = self._getsourcelines(self.curframe)
         except OSError as err:
             self.error(err)
             return
@@ -1367,7 +1377,7 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         except:
             return
         try:
-            lines, lineno = getsourcelines(obj)
+            lines, lineno = self._getsourcelines(obj)
         except (OSError, TypeError) as err:
             self.error(err)
             return
@@ -1441,12 +1451,12 @@ class Pdb(bdb.Bdb, cmd.Cmd):
         """
         if not arg:
             self.message('Currently displaying:')
-            for item in self.displaying.get(self.curframe, {}).items():
-                self.message('%s: %r' % item)
+            for key, val in self.displaying.get(self.curframe, {}).items():
+                self.message('%s: %s' % (key, self._safe_repr(val, key)))
         else:
             val = self._getval_except(arg)
             self.displaying.setdefault(self.curframe, {})[arg] = val
-            self.message('display %s: %r' % (arg, val))
+            self.message('display %s: %s' % (arg, self._safe_repr(val, arg)))
 
     complete_display = _complete_expression
 
@@ -1508,8 +1518,11 @@ class Pdb(bdb.Bdb, cmd.Cmd):
             for alias in keys:
                 self.message("%s = %s" % (alias, self.aliases[alias]))
             return
-        if args[0] in self.aliases and len(args) == 1:
-            self.message("%s = %s" % (args[0], self.aliases[args[0]]))
+        if len(args) == 1:
+            if args[0] in self.aliases:
+                self.message("%s = %s" % (args[0], self.aliases[args[0]]))
+            else:
+                self.error(f"Unknown alias '{args[0]}'")
         else:
             self.aliases[args[0]] = ' '.join(args[1:])
 
@@ -1645,6 +1658,18 @@ class Pdb(bdb.Bdb, cmd.Cmd):
 
         self.run(target.code)
 
+    def _format_exc(self, exc: BaseException):
+        return traceback.format_exception_only(exc)[-1].strip()
+
+    def _getsourcelines(self, obj):
+        # GH-103319
+        # inspect.getsourcelines() returns lineno = 0 for
+        # module-level frame which breaks our code print line number
+        # This method should be replaced by inspect.getsourcelines(obj)
+        # once this bug is fixed in inspect
+        lines, lineno = inspect.getsourcelines(obj)
+        lineno = max(1, lineno)
+        return lines, lineno
 
 # Collect all command help into docstring, if not run with -OO
 

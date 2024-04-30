@@ -1,8 +1,8 @@
 prefix=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv
-exec_prefix=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv
-libdir=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib
-sharedlibdir=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/lib
-includedir=/Users/annu/Desktop/AI_Engineering/Projects/mlproject/venv/include
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+sharedlibdir=${libdir}
+includedir=${prefix}/include
 
 Name: zlib
 Description: zlib compression library
