@@ -47,9 +47,48 @@ class ModelTrainer:
                 "knn" : KNeighborsRegressor()
             }
 
+            params = {
+                "linear_regression" : {
+
+                },
+                "decision_tree" : {
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson']
+                    #'spitter' : ['best', 'random']
+                    #'max_features' : ['sqrt', 'log2']
+                },
+                "random_forest" : {
+                    #'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    #'spitter' : ['best', 'random']
+                    #'max_features' : ['sqrt', 'log2']
+                },
+                "adaboost" : {
+                    'learning_rate': [.1, 0.01, 0.05, 0.001],
+                    'n_estimators' :[8, 16, 32, 64, 128, 256]
+                },
+                "gradient_boosting" : {
+                    'learning_rate': [.1, 0.01, 0.05, 0.001],
+                    'subsample':[0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
+                    'n_estimators' :[8, 16, 32, 64, 128, 256]
+                },
+                "xgboost" : {
+                    'learning_rate': [.1, 0.01, 0.05, 0.001],
+                    'n_estimators' :[8, 16, 32, 64, 128, 256]
+                },
+                "catboost" : {
+                    'depth' : [6,8,10],
+                    'learning_rate': [.01, 0.05, 0.1],
+                    'iterations' : [50, 100, 150]
+
+                },
+                "knn" : {
+                    'n_neighbors' : [5,7,9,11]
+                }
+            }
+
+
             model_report:dict = evaulate_models(X_train = x_train, Y_train = y_train, 
                                                X_test = x_test, Y_test = y_test,  
-                                               models = models)
+                                               models = models, param = params)
             
             best_model_score = max(sorted(model_report.values()))
 

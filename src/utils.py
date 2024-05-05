@@ -7,6 +7,7 @@ import pandas as pd
 import dill
 
 from src.exception import CustomException
+from sklearn.model_selection import GridSearchCV
 
 from sklearn.metrics import r2_score
 
@@ -25,7 +26,7 @@ def save_objects(file_path, obj):
         raise CustomException(e, sys)
     
 
-def evaulate_models(X_train, Y_train,X_test, Y_test ,models):
+def evaulate_models(X_train, Y_train,X_test, Y_test ,models,param):
     '''
     This function is responsible for evaulating the model performance
     '''
@@ -34,7 +35,13 @@ def evaulate_models(X_train, Y_train,X_test, Y_test ,models):
 
         for i in range(len(list(models))):
             model = list(models.values())[i]
+            para = param[list(models.keys())[i]]
 
+            #grid search , cv == cross-validation
+            grid_search = GridSearchCV(model, para, cv=3 )
+            grid_search.fit(X_train, Y_train)
+
+            model.set_params(**grid_search.best_params_)
             model.fit(X_train, Y_train)
 
             Y_train_pred = model.predict(X_train)
